@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>My First App Vue CDN</title>
+
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+    </div>
+
+    <div id="app-2" class="">
+      <span v-bind:title="message">
+        Pasas el mouse por encima de mi.
+      </span>
+    </div>
+
+    <div id="app-3" class="">
+      <span v-if="seen">
+        Ahora me ves.
+      </span>
+      <span v-else>
+        Ahora no me ves.
+      </span>
+    </div>
+    <div id="app-4" class="">
+      <ol>
+        <li v-for="todo in todos">
+          {{todo.text}}
+        </li>
+      </ol>
+    </div>
+
+    <div id="app-5" class="">
+      <p>{{message}}</p>
+      <button v-on:click="reverseMessage" type="button" name="button">Reverse Message</button>
+
+    </div>
+  </body>
+  <!--Vue JS v2.6.11 -->
+  <script src="js/vue-2-6-11.js" charset="utf-8"></script>
+  <!-- Mis componentes-->
+  <script src="js/components/test-vue-component.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+
+  //testing
+    /*
+    var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hola mundo desde Vue!'
+        }
+      })
+    var app2 = new  Vue({
+        el:'#app-2',
+        data: {
+          message: 'cargaste esta pagina el ' + new Date().toLocaleString()
+        }
+      });
+    var app3= new Vue({
+      el: '#app-3',
+      data:{
+        seen:true
+      }
+    });
+
+    var app4= new Vue({
+      el:'#app-4',
+      data:{
+        todos:[
+        {text: 'Aprende Javascript'},
+        {text: 'Aprende vue'},
+        {text: 'Haz cosas increibles'}
+      ]
+      }
+    });
+    app4.todos.push({text: 'Nuevo elemento'});
+    */
+  </script>
+</html>

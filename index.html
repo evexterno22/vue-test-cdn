@@ -3,80 +3,147 @@
   <head>
     <meta charset="utf-8">
     <title>My First App Vue CDN</title>
-
+    <!-- Materialize CSS y Fonts v1.0.0-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <!--Mis estilos-->
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <div id="app">
-      {{ message }}
-    </div>
+    <!-- NAVBAR -->
+    <header>
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <div class="row">
+              <div class="col s12">
+                <ul class="">
+                  <li><a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a></li>
+                  <li><a href="https://codepen.io/collection/nbBqgY" target="_blank" class="brand-logo">Materialize Framework</a></li>
+                  <!-- Side nav Rigth
+                  <li><a href="#" data-target="sidenav-2" class="right sidenav-trigger show-on-medium-and-up"><i class="material-icons">menu</i></a></li>
+                  -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
 
-    <div id="app-2" class="">
-      <span v-bind:title="message">
-        Pasas el mouse por encima de mi.
-      </span>
-    </div>
+      <!-- LEFT SIDEBAR	 -->
+      <ul id="sidenav-1" class="sidenav sidenav-fixed">
+      	<li><a class="subheader">Always out except on mobile</a></li>
+      	<li><a href="https://github.com/dogfalo/materialize/" target="_blank">Github</a></li>
+      	<li><a href="https://twitter.com/MaterializeCSS" target="_blank">Twitter</a></li>
+      	<li><a href="http://next.materializecss.com/getting-started.html" target="_blank">Docs</a></li>
+      </ul>
 
-    <div id="app-3" class="">
-      <span v-if="seen">
-        Ahora me ves.
-      </span>
-      <span v-else>
-        Ahora no me ves.
-      </span>
-    </div>
-    <div id="app-4" class="">
-      <ol>
-        <li v-for="todo in todos">
-          {{todo.text}}
-        </li>
-      </ol>
-    </div>
+      <!-- RIGHT SIDEBAR
+      <ul id="sidenav-2" class="sidenav">
+      	<li><a class="subheader">Subheader</a></li>
+      	<li><a href="https://github.com/dogfalo/materialize/" target="_blank">Github</a></li>
+      	<li><a href="https://twitter.com/MaterializeCSS" target="_blank">Twitter</a></li>
+      	<li><a href="http://next.materializecss.com/getting-started.html" target="_blank">Docs</a></li>
+      </ul>
+      -->
+    </header>
 
-    <div id="app-5" class="">
-      <p>{{message}}</p>
-      <button v-on:click="reverseMessage" type="button" name="button">Reverse Message</button>
 
-    </div>
+
+
+
+
+
+    <main>
+      <div class="container">
+        <h1 class="center">Dual sidebars</h1>
+        <p class="center"><strong>See also:</strong> <a href="https://codepen.io/j_holtslander/pen/YepdOo" target="_blank">Materialize - Dual Sidebars (Ultra-wide 21:9)</a></p>
+        <div id="app">
+          {{ message }}
+        </div>
+
+        <div id="app-2" class="">
+          <span v-bind:title="message">
+            Pasas el mouse por encima de mi.
+          </span>
+        </div>
+
+        <div id="app-3" class="">
+          <span v-if="seen">
+            Ahora me ves.
+          </span>
+          <span v-else>
+            Ahora no me ves.
+          </span>
+        </div>
+        <div id="app-4" class="">
+          <ol>
+            <li v-for="todo in todos">
+              {{todo.text}}
+            </li>
+          </ol>
+        </div>
+
+        <div id="app-5" class="">
+          <p>{{message}}</p>
+          <button v-on:click="reverseMessage" class="btn" type="button" name="button">Reverse Message</button>
+        </div>
+
+        <div id="app-6" class="">
+          <p>{{message}}</p>
+          <input v-model="message" type="text" name="" value="">
+        </div>
+        <div id="app-7" class="">
+          <ol>
+            <todo-item
+            v-for="item in groceryList"
+            v-bind:todo="item"
+            v-bind:key="item.id"
+            >
+            </todo-item>
+          </ol>
+        </div>
+        <div id="app-8" class="">
+          <h1>Hola app!</h1>
+          <p>
+
+            <router-link to="/foo">Ir a Foo </router-link>
+            <router-link to="/bar">Ir a Bar </router-link>
+
+          </p>
+
+        <router-view></router-view>
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+          <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+          <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+          <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+          <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+          <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+      </div>
+    </footer>
+
   </body>
   <!--Vue JS v2.6.11 -->
   <script src="js/vue-2-6-11.js" charset="utf-8"></script>
+  <!--Vue-router JS v3.1.6 -->
+  <script src="js/vue-router-3-1-6.js" charset="utf-8"></script>
+  <!--Materialize JS v1.0.0-->
+  <script src="js/materialize.min.js" charset="utf-8"></script>
   <!-- Mis componentes-->
   <script src="js/components/test-vue-component.js" charset="utf-8"></script>
+  <!--Mis Scripts-->
+  <script src="js/scripts.js" charset="utf-8"></script>
   <script type="text/javascript">
-
-
-  //testing
-    /*
-    var app = new Vue({
-        el: '#app',
-        data: {
-          message: 'Hola mundo desde Vue!'
-        }
-      })
-    var app2 = new  Vue({
-        el:'#app-2',
-        data: {
-          message: 'cargaste esta pagina el ' + new Date().toLocaleString()
-        }
-      });
-    var app3= new Vue({
-      el: '#app-3',
-      data:{
-        seen:true
-      }
-    });
-
-    var app4= new Vue({
-      el:'#app-4',
-      data:{
-        todos:[
-        {text: 'Aprende Javascript'},
-        {text: 'Aprende vue'},
-        {text: 'Haz cosas increibles'}
-      ]
-      }
-    });
-    app4.todos.push({text: 'Nuevo elemento'});
-    */
   </script>
 </html>

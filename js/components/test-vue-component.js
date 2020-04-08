@@ -41,3 +41,48 @@ var app5= new Vue({
     }
   }
 });
+
+var app6= new Vue({
+  el:'#app-6',
+  data:{
+    message: 'Hola Vue!'
+  }
+});
+
+
+Vue.component('todo-item',{
+  props:['todo'],
+  template: '<li>{{todo.text}}</li>'
+});
+
+var app7= new Vue({
+  el:'#app-7',
+  data:{
+    groceryList:[
+      {id:0, text: 'Vegetables'},
+      {id:1, text: 'Cheese'},
+      {id:2, text: 'Cualquier coomida'}
+    ]
+  }
+});
+//Router Test
+const Foo={ template: '<div>foo</div>'};
+const Bar={ template: '<div>bar</div>'};
+
+const routes=[
+  {path: '/foo', component: Foo},
+  {path: '/bar', component: Bar}
+];
+
+const router = new VueRouter({
+  routes
+});
+var app8 = new Vue({
+  router
+
+}).$mount('#app-8');
+
+
+var vm = new Vue({
+  //options
+});
